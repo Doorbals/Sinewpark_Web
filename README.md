@@ -25,3 +25,4 @@ hover 했을 때 자연스럽게 등장할수 있도록 opacity를 조정하는 
 ## 미리보기
 
 ### main.html
+![main_html](https://user-images.githubusercontent.com/87385588/125501727-3f435ec5-df54-4df1-845e-9e5e1c33ba76.png)
