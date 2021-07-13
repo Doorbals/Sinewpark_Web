@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;  /* 테두리 기준 box 크기 지정 */
+}
+
+.container{
+    margin:auto auto;
+    width:1580px;
+    height:1000px;
+    padding-top:200px;
+    background-color:rgb(244, 248, 185);
+}
+
+#logo{
+    background-image:url("images/logo.png");
+    background-size: 150px 140px;
+    background-repeat: no-repeat;
+    background-position-x: 970px;
+    display:block;
+    padding-left:500px;
+    margin-bottom:80px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size:4rem;
+    color:rgb(109, 109, 0);
+}
+
+form input{
+    display:block;
+    margin:auto;
+    border:3px dashed rgb(109, 109, 0);
+    margin-bottom:20px;
+    font-size:1.3rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    width:500px;
+    height:40px;
+    padding-left:10px;
+}
+#id, #passowrd{
+    color:rgba(0,0,0,0.4);
+}
+
+#submit{
+    background-color:rgb(109, 109, 0);
+    height:70px;
+    color:ivory;
+    cursor:pointer;
+}
+
+#signup{
+    display:block;
+    padding-left:820px;
+    font-family: 'Noto Sans KR', sans-serif;
+}

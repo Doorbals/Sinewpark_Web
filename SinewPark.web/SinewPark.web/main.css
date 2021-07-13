@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;  /* 테두리 기준 box 크기 지정 */
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    margin:0 auto;
+    width:1200px;
+    height:1000px;
+}
+
+header{
+    width:100%;
+    height:100px;
+    background-color:rgb(244, 248, 185);
+}
+
+#logo{
+    float:left;
+    width:300px;
+    height:100px;
+    background-image: url("images/logo.png");
+    background-size: 100px 100px;
+    background-repeat : no-repeat;
+    background-position: right;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.7rem;
+    font-weight:600;
+    line-height:100px;
+    padding-right:95px;
+}
+#logo a{
+    display:block;
+    text-decoration: none;
+    text-align:right;
+    color:inherit;
+}
+
+nav{
+    float:right;
+    width:900px;
+    height:100px;
+    
+    font-family: 'Gloria Hallelujah', cursive;
+}
+#topmenu{
+    height:60px;
+}
+
+#topmenu>ul{
+    display:inline;
+    height:1px;
+    float:right;
+    line-height:1;
+    margin-right:0px;
+}
+
+#topmenu>ul li{
+    display:inline;
+    float:left;
+    margin:5px;
+    
+}
+
+#topmenu>ul li a{
+    font-family: 'Noto Sans KR', sans-serif;
+    color:inherit;
+}
+
+#topmenu>li{
+    font-size:1.2rem;
+    float:left;
+    position:relative;
+    border-right:3px dotted black;
+    margin-top:30px;
+    
+}
+#topmenu>li>a{
+    display:block;
+    color:black;
+    font-weight:600;
+    text-decoration: none;
+    padding:0 60px;
+
+}
+#topmenu>li>a:hover{
+    color:gray;
+}
+#topmenu>li>ul{
+    /*display:none*/
+    opacity:0;             /*display:none이나 block으로 할 경우 transition 안 먹혀서 opacity로 가시성 조정*/
+    position:absolute;
+    left:18px;
+    width:170px;
+    background-color: rgba(255,255,255, 0.4);
+    transition:all 1.5s;
+    z-index:10;
+}
+#topmenu>li>ul>li{
+    padding:10px 0px 10px 15px; /*위 오른쪽 아래 왼쪽*/
+}
+
+#topmenu>li>ul>li>a{
+    font-size:1rem;
+    text-decoration: none;
+    padding:10px;
+    color:black;
+    opacity:0;
+    transition:opacity 1.5s;
+    z-index:10;
+}
+#topmenu>li:hover>ul{
+    /*display:block*/
+    opacity:1;
+    z-index:10;   /*슬라이드쇼에 안 가려지게 z축 조정*/
+}
+#topmenu>li:hover>ul>li>a{
+    /*display:block*/
+    opacity:1; 
+}
+
+#topmenu>li>ul>li>a:hover{
+    color:gray;
+}
+
+#slideshow{
+    float:left;
+    width:750px;
+    height:800px;
+    overflow:hidden;   /*영역 넘치면 감춤*/
+    position:relative;
+}
+#slides{
+    position:absolute;
+}
+#slides>img{
+    width:100%;        /*가로로 배치*/
+    float:left;     
+    transition:all 2.5s ease;
+}
+
+.contents{
+    width:100%;
+    height:800px;
+}
+#tabmenu{
+    background-color: olive;
+    float:right;
+    width:450px;
+    height:400px;  
+}
+
+#tabmenu input[type="radio"]{
+    display:none;
+}
+
+#tabmenu label{
+    display:inline-block;
+    margin: 0 0;
+    padding:20px 40px;
+    font-weight:600;
+    text-align:center;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size : 1.2rem;
+    
+}
+#tabmenu label:hover{
+    color:goldenrod;
+    cursor:pointer;
+}
+
+#tabmenu input:checked + label{
+    color:rgb(244, 248, 185);
+    background-color: rgba(255,255,255, 0.1);
+}
+
+.tabContent{
+    display:none;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-top:1px solid #ddd;
+    background-color:rgb(244, 248, 185);
+}
+
+.tabContent h2{
+    display:none;
+}
+
+#notice ul{
+    list-style:square;
+    margin-left:40px;
+}
+
+#notice ul li{
+    font-size:1rem;
+    font-weight:600;
+    font-family: 'Gloria Hallelujah', cursive;
+    line-height:3;
+}
+
+#notice ul li a{
+    color:inherit;
+}
+
+
+#gallery ul{
+    margin-left:10px;
+}
+
+#gallery ul li{
+    padding:10px;
+    display:inline;
+}
+
+#gallery ul li img{
+    width:120px;
+    height:130px;
+    margin-bottom:15px;
+}
+
+#tab1:checked~#gallery,
+#tab2:checked~#notice{
+    display:block;
+}
+
+#links{
+    float:right;
+    width:450px;
+    height:400px;
+    border-top:4px dashed olive;
+    background-color:rgb(244, 248, 185);
+}
+
+#links ul{
+    padding:0;
+    overflow:hidden;
+}
+
+#links ul li{
+    float:left;
+    width:50%;
+    text-align:center;
+    margin:10px 0;
+}
+
+#links ul li a span{
+    display:block;
+    margin: 0 auto;
+    width:150px;
+    height:150px;
+    border-radius: 100%;
+    border:1px dashed rgb(255, 254, 241);
+    line-height:150px
+}
+
+#quick_icon1{
+    background-image: url("images/quick_draw_your_light.jpg");
+    background-size: 150px 150px;
+}
+#quick_icon2{
+    background-image: url("images/quick_love_box.jpg");
+    background-size: 150px 150px;
+}
+#quick_icon3{
+    background-image: url("images/quick_lettering.jpg");
+    background-size: 250px 150px;
+    background-position-x: -15px;
+}
+#quick_icon4{
+    background-image: url("images/quick_other.jpg");
+    background-size: 150px 150px;
+}
+#links ul li a p{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: 900;
+    font-size:1rem;
+    color:olive;
+}
+#links ul li a{
+    text-decoration: none;
+}
+
+footer{
+    width:100%;
+    height:100px;
+    border-top: 1px dashed olive;
+}
+
+#bottomMenu{
+    width:100%;
+    height:20px;
+    position:relative;
+}
+
+#bottomMenu ul{
+    margin-top:15px;
+}
+
+#bottomMenu ul li{
+    float:left;
+    padding : 0px 10px;
+    border-right:1px solid gray;
+}
+
+#bottomMenu ul li:last-child{
+    border-right:none;
+}
+
+#bottomMenu ul li a {
+    font-size:15px;
+    text-decoration: none;
+    color:gray;
+}
+
+#sns{
+    position:absolute;
+    right:0;
+}
+
+#sns ul li{
+    border:none;
+    padding:5px;
+}
+
+#sns ul li a img{
+    width:30px;
+    height:30px;
+}
+
+#company{
+    clear:both;
+    margin-top:15px;
+    margin-left:10px;
+}
+
+#company p{
+    font-size:15px;
+    color:gray;
+}
+
